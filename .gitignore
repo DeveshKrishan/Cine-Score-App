@@ -1,0 +1,6 @@
+
+.DS_Store
+.vscode/settings.json
+.vscode/tasks.json
+archive/rating.csv
+archive/genome_scores.csv
