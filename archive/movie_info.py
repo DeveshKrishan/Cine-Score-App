@@ -10,13 +10,35 @@ def fetch_movie_info() -> None:
     
     csvFilePath = "archive/movie.csv"
     with open(csvFilePath, 'r') as file:
-        csvReader = csv.reader(file)
+        csvReader = csv.reader(file) #read as a csv file
         next(csvReader) #skip header line
         
         for row in csvReader:
             movieId = row[0]
-            for char in row[1]:
-                '''split string at '(' for title and year'''
+            
+            '''Separate the movie title and year from a single string'''
+            movieTitleYear = row[1]
+            movieTitle, movieYear = movieTitleYear.split("(")
+            movieTitle = movieTitle.strip()
+            try:
+                movieYear = int(movieYear.replace(")", "").strip())
+            except ValueError:
+                print(f"Movie Year for ID: {movieId} Title: {movieTitle} is in invalid format.")
+                continue
+            
+            movieGenre = row[2]
+            
+            try:
+                info[movieId].extend([movieTitle, movieYear, movieGenre])
+            except KeyError:
+                print(f"Unable to insert ID: {movieId} Title: {movieTitle} into dictionary.")
+                continue
+            
+        try:
+            with open('movie_info.json', 'w') as f:
+                json.dump(info, f, indent=4)
+        except:
+            print(f"An error occured when writing to Json file containing movie_info.")
     
 if __name__ == "__main__":
     fetch_movie_info()
