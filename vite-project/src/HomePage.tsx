@@ -9,8 +9,12 @@ function HomePage(){
                 <div className="ad-content"></div>
             </div>
 
-            <div className="New-Release">
+            <div className="New-Release sub-sections">
                 <h1>New Releases Movies</h1>
+            </div>
+
+            <div className="popular-movies sub-sections">
+                <h1>Popular Movies</h1>
             </div>
         </div>
     )
