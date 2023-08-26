@@ -9,7 +9,7 @@ def fetch_movie_info() -> None:
     info = defaultdict(list)
     
     csvFilePath = "archive/movie.csv"
-    with open(csvFilePath, 'r') as file:
+    with open(csvFilePath, 'r', encoding='utf-8') as file:
         csvReader = csv.reader(file) #read as a csv file
         next(csvReader) #skip header line
         
@@ -18,12 +18,15 @@ def fetch_movie_info() -> None:
             
             '''Separate the movie title and year from a single string'''
             movieTitleYear = row[1]
-            movieTitle, movieYear = movieTitleYear.split("(")
-            movieTitle = movieTitle.strip()
+            
             try:
-                movieYear = int(movieYear.replace(")", "").strip())
+                for i in range(len(movieTitleYear) - 1, -1, -1): #reverse for loop
+                    if(movieTitleYear[i] == "("):
+                        movieTitle = movieTitleYear[:i].strip()
+                        movieYear = movieTitleYear[i+1:-1].strip()
+                        break
             except ValueError:
-                print(f"Movie Year for ID: {movieId} Title: {movieTitle} is in invalid format.")
+                print(f"Error splitting {movieTitleYear}")
                 continue
             
             movieGenre = row[2]
@@ -31,7 +34,7 @@ def fetch_movie_info() -> None:
             try:
                 info[movieId].extend([movieTitle, movieYear, movieGenre])
             except KeyError:
-                print(f"Unable to insert ID: {movieId} Title: {movieTitle} into dictionary.")
+                print(f"Unable to insert ID: {movieId} Title: {movieTitle} Year: {movieYear} into dictionary.")
                 continue
             
         try:
