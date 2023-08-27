@@ -15,10 +15,12 @@
     height: 80%;
 }
 
+/* sub-sec */
 .sub-sections{
     font-size: 2.5vw;
     color: #FFD338;
     font-weight: 700;
+    padding: 1rem;
 }
 
 .New-Release{
