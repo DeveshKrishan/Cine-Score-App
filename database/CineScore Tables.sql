@@ -11,9 +11,8 @@ CREATE TABLE [User]
 CREATE TABLE Movies
 (
 	MovieId INT
-	,Rating FLOAT
-	,MovieYear INT 
 	,MovieName VARCHAR(40)
+	,MovieYear INT
 	,PRIMARY KEY (MovieId)
 )
 
@@ -56,4 +55,3 @@ CREATE TABLE Friends
 	,FOREIGN KEY (User2Username) REFERENCES [User](Username)
 )
 GO
-
