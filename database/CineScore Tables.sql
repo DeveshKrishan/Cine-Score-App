@@ -16,11 +16,12 @@ CREATE TABLE Movies
 	,PRIMARY KEY (MovieId)
 )
 
-CREATE TABLE Movie_Genre
+CREATE TABLE MovieGenre
 (
-	MovieId INT NOT NULL
+	MovieGenreId INT IDENTITY(1,1)
+	,MovieId INT NOT NULL
 	,Genre VARCHAR(20) NULL
-	,PRIMARY KEY (MovieId)
+	,PRIMARY KEY (MovieGenreId)
 	,FOREIGN KEY (MovieId) REFERENCES Movies(MovieId)
 )
 
