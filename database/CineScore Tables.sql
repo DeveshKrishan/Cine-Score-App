@@ -11,7 +11,7 @@ CREATE TABLE [User]
 CREATE TABLE Movies
 (
 	MovieId INT
-	,MovieName VARCHAR(40)
+	,MovieName VARCHAR(200)
 	,MovieYear INT
 	,PRIMARY KEY (MovieId)
 )
