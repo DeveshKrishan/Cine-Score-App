@@ -5,3 +5,4 @@
 archive/rating.csv
 archive/genome_scores.csv
 backend/env
+backend/.env
