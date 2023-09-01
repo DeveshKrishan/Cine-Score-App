@@ -14,6 +14,7 @@ FROM Movies m
 GROUP BY
 	m.MovieName
 --write a query to get all the reviews a user did along with its information given a username--
+-- WORKS --
 SELECT r.Username
 			,m.MovieName
 			,m.MovieYear
@@ -61,6 +62,6 @@ INNER JOIN
 	WHERE m.MovieId = 'MovieID'
 	GROUP BY m.MovieName
 --write a query to check if given a username, is the username already in the user table given a username--
-SELECT U.Username
+SELECT u.Username
 FROM [User] u
-WHERE U.Username = 'Username'
+WHERE u.Username = 'Username'
