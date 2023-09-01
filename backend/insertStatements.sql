@@ -6,6 +6,9 @@ VALUES('testUser','123456','testuser@gmail.com',0,'9163688200')
 INSERT INTO Reviews(Username, ReviewDate, MovieId, Score)
 VALUES ('testUser', '8/31/2023', 1, 5.0)
 
+INSERT INTO Reviews(Username, ReviewDate, MovieId, Score)
+VALUES ('testUser2', '8/31/2023', 1, 4.0)
+
 -- Movies --
 INSERT INTO Movies(MovieId, MovieName, MovieYear)
 VALUES(MovieID,'MovieName',MovieYear)
