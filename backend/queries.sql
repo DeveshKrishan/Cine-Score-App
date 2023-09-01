@@ -10,7 +10,7 @@ FROM Movies m
 	INNER JOIN
 		Favorites f
 		ON m.MovieId = f.MovieId
-		WHERE f.Username = 'User'
+		WHERE f.Username = 'User1'
 GROUP BY
 	m.MovieName
 --write a query to get all the reviews a user did along with its information given a username--
@@ -31,6 +31,7 @@ GROUP BY m.MovieName
 			,m.MovieYear
 			,r.Score
 			,r.ReviewDate
+			,r.Username
 -- write a query to get the average rating for a movie given a movie id --
 SELECT m.MovieName
 		,AVG(r.Score)
