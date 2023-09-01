@@ -12,11 +12,11 @@ VALUES(MovieID,'MovieName',MovieYear)
 
 -- MovieGenre --
 INSERT INTO MovieGenre(MovieId,Genre)
-VALUES('MovieID','MoveGenre')
+VALUES('MovieID','MovieGenre')
 
 -- Friends --
 INSERT INTO Friends(User1Username,User2Username,FriendshipStarted)
-VALUES('User1Username','User2Username',2023-08-31)
+VALUES('User1Username','User2Username', MovieYear)
 
 -- Favorites -- 
 INSERT INTO Favorites(Username, MovieId)
