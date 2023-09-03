@@ -1,3 +1,5 @@
+-- These statements are used as dummy data into the database to extensively test and develop.
+
 -- User --
 INSERT INTO [User](Username, [Password], Email, Active, Phone)
 VALUES('testUser','123456','testuser@gmail.com',0,'9163688200')
